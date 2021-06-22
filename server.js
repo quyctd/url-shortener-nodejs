@@ -22,6 +22,17 @@ app.post("/shortUrls", async (req, res) => {
   res.redirect("/")
 })
 
+app.get("/:shortUrl", async (req, res) => {
+  const url = await ShortUrl.findOne({ short: req.params.shortUrl })
+  if (url) {
+    url.clicks += 1
+    url.save()
+    res.redirect(url.full)
+  } else {
+    res.sendStatus(404)
+  }
+})
+
 app.listen(process.env.PORT || 3000, () => {
   console.log("Your app is listening on port 3000")
 })
