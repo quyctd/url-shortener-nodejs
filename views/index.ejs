@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>URL Shrinker</h1>
+      <form action="/shortUrls" method="POST" class="my-4 d-flex">
+        <label for="fullUrl" class="visually-hidden">Url</label>
+        <input
+          placeholder="Url"
+          required
+          type="url"
+          name="fullUrl"
+          id="fullUrl"
+          class="form-control"
+        />
+        <button class="btn btn-success ms-2" type="submit">Shrink</button>
+      </form>
+
+      <table class="table table-striped table-borderless table-responsive">
+        <thead>
+          <tr>
+            <th>Full URL</th>
+            <th>Short URL</th>
+            <th>Clicks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://google.com">https://google.com</a></td>
+            <td><a href="https://goog.le">https://goog.le</a></td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
